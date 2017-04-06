@@ -23,6 +23,7 @@ public class Hello {
 		inch = in.nextDouble();
 		int meter = (int)((foot + inch/12)*0.3048*100);
 		System.out.println("meter = " + meter);
+		in.close();
 	}
 
 }
