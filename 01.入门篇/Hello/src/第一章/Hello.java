@@ -1,3 +1,5 @@
+package 第一章;
+
 import java.util.Scanner;
 
 
