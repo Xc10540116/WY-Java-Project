@@ -1,4 +1,4 @@
-package Second;
+package 第二章.时间换算;
 
 import java.util.Scanner;
 
@@ -89,6 +89,38 @@ public class Main {
 		}
 	}
 }
+/*public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        try{
+            int bjt = in.nextInt();
+            int utc;
+            int hour = bjt / 100;
+            int minute = bjt % 100;
+            if(hour < 24 && hour >= 0){
+                int newhour;
+                if (hour >= 8){
+                    newhour = hour - 8;
+                }
+                else{
+                    newhour = hour + 24 - 8;
+                }
+                if(minute < 60){
+                    String newminute = Integer.toString(minute);
+                    if(minute < 10){
+                        newminute = "0" + minute;
+                    }
+                    utc = Integer.parseInt(newhour + newminute);
+                    System.out.println(utc);
+                }
+            }
+        } catch(Exception e){
+            System.out.println("ddddd");
+        }
+    }
+}
 
 public class Main {
 
@@ -102,7 +134,7 @@ public class Main {
 			System.out.println(hour);
 			int minute = bjt % 100;
 			System.out.println(minute);
-			if(hour < 24 && hour > 0){
+			if(hour < 24 && hour >= 0){
 				int newhour;
 				if(hour >=8)
 					newhour = hour - 8;
@@ -120,4 +152,4 @@ public class Main {
 			System.out.println("this not a number");
 		}
 	}
-}
+}*/
