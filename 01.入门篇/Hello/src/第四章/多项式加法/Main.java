@@ -42,7 +42,7 @@ public class Main {
 				}
 				else
 					System.out.print(r[i]);
-			}1
+			}
 		}
 	}
 
