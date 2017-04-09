@@ -10,6 +10,7 @@ public class MainArr {
 		int[] input = new int[101];
 		int power;	// 幂次
 		int coef;	// 系数
+		in.close();
 		
 		// 生成最终数组
 		for(int flags=0; flags<2; flags++){
