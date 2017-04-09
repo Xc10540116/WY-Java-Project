@@ -30,6 +30,18 @@ public class Main {
 			System.out.print(r[i] + " ");
 		}
 		System.out.println();
+
+		
+		//如果数组的值全部为0，这返回0
+		int sum = 0;
+		for(int i=0; i<r.length; i++){
+			sum += r[i];
+		}
+		if(sum == 0){
+			System.out.println(0);
+			System.exit(0);
+		}
+		
 		// 打印
 		int index = 1;
 		for(int i=r.length-1; i>=0; i--){
@@ -52,6 +64,8 @@ public class Main {
 		int value;
 		do{
 			index = in.nextInt();
+			if(index > 100)
+				System.exit(-1);
 			value = in.nextInt();
 			arrlist[index] = value;
 		}while(index != 0);
