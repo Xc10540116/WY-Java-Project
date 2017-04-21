@@ -21,6 +21,18 @@ public class FoxAndRabbit {
 	private View theView;
 	private JFrame frame;
 	
+	// 内部类
+	private class StepListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			step();
+			frame.repaint();
+		}
+		
+	}
+	
 	public FoxAndRabbit(int size) {
 		theField = new Field(size, size);
 		for ( int row = 0; row<theField.getHeight(); row++ ) {
@@ -41,14 +53,16 @@ public class FoxAndRabbit {
 		frame.add(theView);
 		JButton btnStep = new JButton("单步");
 		frame.add(btnStep, BorderLayout.NORTH);
-		btnStep.addActionListener(new ActionListener(){
+		btnStep.addActionListener(new StepListener());
+		// 匿名类
+		/*btnStep.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("按下啦！");
 				step();
 				frame.repaint();
 			}
-		});
+		});*/
 		frame.pack();
 		frame.setVisible(true);
 	}
