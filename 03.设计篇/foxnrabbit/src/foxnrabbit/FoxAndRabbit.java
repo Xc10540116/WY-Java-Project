@@ -1,7 +1,11 @@
 package foxnrabbit;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import animal.Animal;
@@ -15,6 +19,7 @@ import field.View;
 public class FoxAndRabbit {
 	private Field theField;
 	private View theView;
+	private JFrame frame;
 	
 	public FoxAndRabbit(int size) {
 		theField = new Field(size, size);
@@ -29,11 +34,21 @@ public class FoxAndRabbit {
 			}
 		}
 		theView = new View(theField);
-		JFrame frame = new JFrame();
+		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setTitle("Cells");
 		frame.add(theView);
+		JButton btnStep = new JButton("单步");
+		frame.add(btnStep, BorderLayout.NORTH);
+		btnStep.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("按下啦！");
+				step();
+				frame.repaint();
+			}
+		});
 		frame.pack();
 		frame.setVisible(true);
 	}
@@ -93,7 +108,7 @@ public class FoxAndRabbit {
 	
 	public static void main(String[] args) {
 		FoxAndRabbit fnr = new FoxAndRabbit(50);
-		fnr.start(100);
+//		fnr.start(100);
 	}
 
 }
